@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+    <defs>
+        <circle id="prefix__a" cx="40" cy="40" r="40"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="prefix__b" fill="#fff">
+            <use xlink:href="#prefix__a"/>
+        </mask>
+        <use fill="#E6E8EB" xlink:href="#prefix__a"/>
+        <path fill="#002947" fill-rule="nonzero" d="M51 26.39c.55 0 1 .447 1 1v7h9c.55 0 1 .447 1 1v45h3c.55 0 1 .45 1 1s-.45 1-1 1H15c-.552 0-1-.45-1-1s.448-1 1-1h3v-45a1 1 0 011-1h9v-7a1 1 0 011-1zm-5 44H34v10h12v-10zm-18-8h-6v4h6v-4zm10 0h-6v4h6v-4zm10 0h-6v4h6v-4zm10 0h-6v4h6v-4zm-30-8h-6v4h6v-4zm10 0h-6v4h6v-4zm10 0h-6v4h6v-4zm10 0h-6v4h6v-4zm-30-8h-6v4h6v-4zm10 0h-6v4h6v-4zm10 0h-6v4h6v-4zm10 0h-6v4h6v-4zm-18-18a8 8 0 100 16 8 8 0 000-16zm-12 10h-6v4h6v-4zm30 0h-6v4h6v-4zm-16.334-7v3.333H45v3.332h-3.334v3.334h-3.332v-3.334H35v-3.332h3.334V31.39h3.332z" mask="url(#prefix__b)" opacity=".348"/>
+    </g>
+</svg>

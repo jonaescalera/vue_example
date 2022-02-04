@@ -1,0 +1,163 @@
+image: node:14-buster
+pipelines:
+  custom:
+    nextgen-prod:
+        - step:
+           name: Build
+           script:
+            - npm install
+            - npm run build:prod
+           artifacts:
+            - dist/**
+        - step:
+            name: Deploy to S3 NEXGEN
+            deployment: production
+            script:
+            - pipe: atlassian/aws-s3-deploy:0.3.8
+              variables:
+                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                 AWS_DEFAULT_REGION: 'us-east-1'
+                 S3_BUCKET: 'apps.airfinder.com'
+                 LOCAL_PATH: 'dist'
+                 ACL: 'public-read'
+    nextgen-hospitality:
+      - step:
+          name: Build
+          script:
+          - npm install
+          - npm run build:hospitality
+          artifacts:
+          - dist/**
+      - step:
+          name: Deploy to S3 NEXGEN HOSPITALITY
+          deployment: hospitality
+          script:
+          - pipe: atlassian/aws-s3-deploy:0.3.8
+            variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: 'us-east-1'
+                S3_BUCKET: 'apps-hospitality.airfinder.com'
+                LOCAL_PATH: 'dist'
+                ACL: 'public-read'
+    nextgen-dev:
+        - step:
+           name: Build
+           script:
+            - npm install
+            - npm run build:dev
+           artifacts:
+            - dist/**
+        - step:
+            name: Deploy to S3 NEXGEN
+            deployment: deployment
+            script:
+            - pipe: atlassian/aws-s3-deploy:0.3.8
+              variables:
+                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                 AWS_DEFAULT_REGION: 'us-east-1'
+                 S3_BUCKET: 'apps-dev.airfinder.com'
+                 LOCAL_PATH: 'dist'
+                 ACL: 'bucket-owner-full-control'
+    nextgen-test:
+        - step:
+           name: Build
+           script:
+            - npm install
+            - npm run build:test
+           artifacts:
+            - dist/**
+        - step:
+            name: Deploy to S3 NEXGEN
+            deployment: test
+            script:
+            - pipe: atlassian/aws-s3-deploy:0.3.8
+              variables:
+                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                 AWS_DEFAULT_REGION: 'us-east-1'
+                 S3_BUCKET: 'apps-test.airfinder.com'
+                 LOCAL_PATH: 'dist'
+                 ACL: 'public-read'             
+    activate-prod:
+        - step:
+           name: Build
+           script:
+            - npm install
+            - npm run build:activate-prod
+           artifacts:
+            - dist-activate/**
+        - step:
+            name: Deploy to S3 Activate-Prod
+            deployment: activate-prod-deployment
+            script:
+            - pipe: atlassian/aws-s3-deploy:0.3.8
+              variables:
+                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                 AWS_DEFAULT_REGION: 'us-east-1'
+                 S3_BUCKET: 'activate.airfinder.com'
+                 LOCAL_PATH: 'dist-activate'
+                 ACL: 'public-read'
+    activate-dev:
+        - step:
+           name: Build
+           script:
+            - npm install
+            - npm run build:activate-dev
+           artifacts:
+            - dist-activate/**
+        - step:
+            name: Deploy to S3 Activate-Dev
+            deployment: activate-dev-deployment
+            script:
+            - pipe: atlassian/aws-s3-deploy:0.3.8
+              variables:
+                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                 AWS_DEFAULT_REGION: 'us-east-1'
+                 S3_BUCKET: 'activate-dev.airfinder.com'
+                 LOCAL_PATH: 'dist-activate'
+                 ACL: 'public-read'
+    activate-test:
+        - step:
+           name: Build
+           script:
+            - npm install
+            - npm run build:activate-test
+           artifacts:
+            - dist-activate/**
+        - step:
+            name: Deploy to S3 Activate-Test
+            deployment: activate-test-deployment
+            script:
+            - pipe: atlassian/aws-s3-deploy:0.3.8
+              variables:
+                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                 AWS_DEFAULT_REGION: 'us-east-1'
+                 S3_BUCKET: 'activate-test.airfinder.com'
+                 LOCAL_PATH: 'dist-activate'
+                 ACL: 'public-read'           
+    nextgen-dev-updated:
+        - step:
+           name: Build
+           script:
+            - npm install
+            - npm run build:dev
+           artifacts:
+            - dist/**
+        - step:
+            name: Deploy to S3 NEXGEN DEV UPDATED
+            deployment: nextgen-dev-updated
+            script:
+            - pipe: atlassian/aws-s3-deploy:0.3.8
+              variables:
+                 AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                 AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                 AWS_DEFAULT_REGION: 'us-east-1'
+                 S3_BUCKET: 'apps-dev-updated'
+                 LOCAL_PATH: 'dist'
+                 ACL: 'public-read'

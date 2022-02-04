@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="81" height="80" viewBox="0 0 81 80">
+    <defs>
+        <circle id="a" cx="40" cy="40" r="40"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(.6)">
+        <mask id="b" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <use fill="#E6E8EB" xlink:href="#a"/>
+        <path fill="#002947" fill-rule="nonzero" d="M20 28v53.333h13.333v-8h13.334v8H60V28H20zm10.667 34.667h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm8 24h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm8 24h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm8 24h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334zm0-8h-5.334v-5.334h5.334v5.334z" mask="url(#b)" opacity=".346"/>
+    </g>
+</svg>

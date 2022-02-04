@@ -1,0 +1,322 @@
+//variables
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+html {
+    font-size: 16px;
+    overflow: hidden !important;
+}
+@media (max-width: 812px) {
+    html {
+        overflow: inherit !important;
+    }
+}
+body {
+    background-color: #E6E8EB;
+}
+.v-main__wrap{
+    background-color: #e6e8eb;
+}
+.small-text {
+    font-size: 0.8rem;
+}
+.smaller-text {
+    font-size: 0.7rem;
+}
+.big-text {
+    font-size: 0.9rem;
+}
+.text-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.center-content {
+    display: block !important;
+    margin: auto;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.w-50 {
+  width: 50% !important;
+}
+
+.w-auto {
+    width: auto;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+.p-relative {
+  position: relative;
+}
+.p-absolute {
+  position: absolute !important;
+}
+.p-0 {
+    padding: 0px !important;
+}
+
+.noTransitions {
+    transition: none !important;
+}
+
+.v-application .v-btn{
+    text-transform: none;
+}
+.btn-outlined-secondary {
+    border-color: var(--v-secondary-base) !important;
+    border-width: 2px !important;
+}
+.video-player {
+  width: inherit;
+  max-height: 620px;
+}
+
+//input type number without arrows
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+// pagination
+#pagination{
+    .v-text-field input{
+        font-size: 10px!important;
+        width: 75px;
+    }
+    .v-text-field label{
+        font-size: 12px;
+    }
+} 
+
+// main card
+.custom-card {
+    height: calc(100vh - 190px);
+    min-height: calc(100vh - 600px);
+    border: 1px solid #cfd0d3;
+    border-top: 6px solid var(--v-secondary-base);
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.card-no-footer-height {
+    height: calc(100vh - 105px);
+    @media (max-width: 768px){
+        height: auto;
+    }
+}
+
+// avatar
+.rounded-circle {
+    height: 35px;
+    background: var(--notification);
+    width: 35px;
+    text-align: center;
+    color: white;
+    padding-top: 7px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+// status chips
+.status-active {
+    border: 1px solid #9DD38B !important;
+}
+
+#login .v-label[for=login-check]{
+    color: var(--v-primary-darken2);
+    font-size: 11px;
+}
+
+  // TODO improve the scrollbar handling
+  /* scrollbar */
+  .v-card__text::-webkit-scrollbar-track, tbody::-webkit-scrollbar-track, .v-card::-webkit-scrollbar-track, .v-expansion-panels::-webkit-scrollbar-track,
+  .v-menu__content::-webkit-scrollbar-track, .assets-list::-webkit-scrollbar-track, .custom-card::-webkit-scrollbar-track, .event-list-container::-webkit-scrollbar-track,
+  .default-scroll-bar::-webkit-scrollbar-track, .v-dialog--active::-webkit-scrollbar-track, .v-navigation-drawer__content::-webkit-scrollbar-track,
+  .location-detail-list::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  .v-card__text::-webkit-scrollbar, tbody::-webkit-scrollbar, .v-card::-webkit-scrollbar, .v-expansion-panels::-webkit-scrollbar,
+  .v-menu__content::-webkit-scrollbar, .assets-list::-webkit-scrollbar, .custom-card::-webkit-scrollbar, .event-list-container::-webkit-scrollbar,
+  .default-scroll-bar::-webkit-scrollbar, .v-dialog--active::-webkit-scrollbar, .v-navigation-drawer__content::-webkit-scrollbar, .location-detail-list::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: #fff;
+  }
+
+  .v-card__text::-webkit-scrollbar-thumb, tbody::-webkit-scrollbar-thumb, .v-card::-webkit-scrollbar-thumb, .v-expansion-panels::-webkit-scrollbar-thumb,
+  .v-menu__content::-webkit-scrollbar-thumb, .assets-list::-webkit-scrollbar-thumb, .custom-card::-webkit-scrollbar-thumb, .event-list-container::-webkit-scrollbar-thumb,
+  .default-scroll-bar::-webkit-scrollbar-thumb, .v-dialog--active::-webkit-scrollbar-thumb, .v-navigation-drawer__content::-webkit-scrollbar-thumb,
+  .location-detail-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #D8D8D8;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+
+  // Override Location Detail Popup in Map View for Indoor Tags Scroll Background
+  .location-detail-list::-webkit-scrollbar-track, .location-detail-list::-webkit-scrollbar {
+    background-color: unset;
+  }
+
+  //scrollbar on firefox
+  .v-card__text, tbody, .v-card, .v-expansion-panels,
+  .v-menu__content, .assets-list, .custom-card, .event-list-container,
+  .default-scroll-bar{
+    scrollbar-width: thin;
+  }
+
+  // toast messages
+  .toasted {
+    font-family: 'Montserrat';
+    border-radius: 4px !important;
+    border-color: var(--v-secondary-base) !important;
+    font-weight: normal !important;
+  }
+  .toast-success {
+      background-color: var(--v-success-base) !important;
+      border-color: var(--v-primaryLight-base) !important;
+      color: #ffffff !important;
+  }
+  .toast-error {
+    background-color: var(--v-error-lighten1) !important;
+    border-color: var(--v-error-base) !important;
+    color: #ffffff !important;
+  }   
+  .toasted.outline .action {
+        color: #ffffff;
+  }
+  @media only screen and (max-width: 600px) {
+    .toasted-container {
+      bottom: 35px !important;
+      div {
+        width: 93% !important;
+        margin: 2% !important; 
+      }
+    }
+  }
+
+  // modal styles
+
+  .headline {
+    height: 48px;
+    font-size: 18px !important;
+    font-weight: 600;
+    color: #3b5762;
+  }
+
+  //custom Label
+
+  .custom-label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  //map 
+
+  .invalid-polygon {
+    color: var(--v-error-base) !important;
+    padding-top: 15px !important;
+    overflow: hidden !important;
+  }
+
+  .mapboxgl-ctrl-bottom-left {
+    display: none !important;
+  }
+
+  .map-loaded {
+    animation-fill-mode: forwards;
+    animation-name: fade-in;
+    animation-duration: 2s;
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .mapboxgl-popup-close-button{
+    font-size: 20px;
+    margin-right: 3px;
+  }
+  @media (max-width: 768px) {
+    .toolbar-title, .toggle-map-list-label {
+      display: none;
+    }
+  }
+  @media (max-width: 414px) {
+    .v-toolbar__content .v-btn.v-btn--icon.v-size--default {
+      margin-left: -18px !important;
+    }
+  }
+
+#geocoder{
+  margin-bottom: 30px;
+  .mapboxgl-ctrl-geocoder{
+    max-width: 100%!important;
+    width: 100%!important;
+    box-shadow: none;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.42);
+    height: 40px;
+    &:focus{
+      border-color: var(--v-secondary-base);
+    }
+  }
+  .mapboxgl-ctrl-geocoder--input:focus{
+    outline: none;
+  }
+}
+.mapboxgl-popup-content .pin{
+  float: right;
+  margin-right: 5px;
+  margin-top: -6px;
+  font-size: 14px!important;
+  cursor: pointer;
+}
+.mapboxgl-popup-content .pin:hover{
+  background-color: rgba(0,0,0,.05);
+}
+.sg-container{
+  .v-input__control{
+    .v-messages{
+      display: none;
+    }
+  }
+}
+#siteEditForm {
+  .v-messages {
+    display: none;
+  }
+}

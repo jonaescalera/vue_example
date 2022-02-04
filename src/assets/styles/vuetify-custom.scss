@@ -1,0 +1,160 @@
+.v-application, .v-application button.caption {
+    font-family: 'Montserrat'!important;
+}
+
+/* Inputs */
+.theme--light.v-input, .theme--light.v-input input, .theme--light.v-input textarea{
+    color:var(--v-primary-darken2) !important;
+    font-size: 14px;
+}
+#activate {
+    label {
+        color: #595959 !important;
+    }
+}
+@media (max-width: 768px) {
+    .theme--light.v-input, .theme--light.v-input input, .theme--light.v-input textarea{
+        //this is to avoid the auto zoom-in on input focusing
+        font-size: 16px;
+    }
+}
+// search bar
+.v-text-field.v-text-field--solo:not(.v-text-field--solo-flat) > .v-input__control > .v-input__slot {
+    box-shadow: none !important;
+    border-radius: 4px;
+}
+
+/* End Inputs */
+
+/* Pagination */
+
+#pagination .theme--light.v-pagination .v-pagination__item,
+#pagination-dropdown .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled), 
+#pagination .theme--light.v-pagination .v-pagination__navigation, #pagination .theme--light.v-select .v-select__selection--comma{
+    color:var(--v-primary-darken2) !important; 
+    box-shadow: none !important;
+    font-size: 10px;
+} 
+#pagination .theme--light.v-pagination .v-pagination__item.v-pagination__item--active{
+    color: #ffffff!important;
+}
+#pagination .mdi-menu-down::before, #pagination .mdi-menu-down::after, #pagination .mdi-chevron-right::before,
+#pagination .mdi-chevron-left::before {
+    color: var(--v-secondary-base) !important;
+}
+.dropdown .v-input__control, .dropdown .v-select__slot label{
+    font-size: 10px!important;
+}
+.v-text-field.v-text-field--enclosed.v-text-field--single-line .v-text-field__prefix,
+.v-text-field.v-text-field--enclosed.v-text-field--single-line .v-text-field__suffix{
+    font-size: 10px;
+}
+/* End Pagination*/
+
+/* Dialogs*/
+.v-dialog .v-card__title{
+	color: white;
+}
+/* End Dialogs*/
+
+// chips
+.v-chip.v-size--default {
+    background-color: #F8F8F9 !important;
+    width: inherit !important; 
+    height: 20px !important;
+    padding: 2px 4px 2px 4px;
+    border: 1px solid #7A8995;
+    .chip-text {
+        height: 22px;
+        font-size: 0.65rem;
+        color: var(--v-primary-darken2);
+        img {
+            margin-top: 3px;
+            position: absolute;
+        }
+    }
+}
+
+.v-chip.v-size--default.filter-chip{ 
+    border:none;
+    background-color: white!important;
+}
+
+// end chips
+
+// buttons
+
+.v-btn:not(.v-btn--round).v-size--default {
+    height: 38px !important;
+}
+
+//end buttons
+
+#login .v-messages__message{
+    text-align:right
+}
+#login .v-input--selection-controls{
+    margin-top:0px;
+    padding-top:0px;
+}
+
+.switcher{
+    .v-label{
+      color: var(--v-primary-base)!important;
+      font-size: 0.85rem;
+    }
+}
+//expansion panel
+.v-application--is-ltr .v-expansion-panel-header:hover{
+    color: var(--v-primary-base)!important;
+}
+.v-application--is-ltr .v-expansion-panel-header__icon {
+    position: absolute;
+    margin-top: 0px;
+    left: 18px;
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+    span {
+        color: var(--v-secondary-base) !important;
+    }
+  } 
+    #assets-map .v-expansion-panel-header--active{
+        color: var(--v-primary-base)!important;
+    }
+ 
+    #assets-map .v-expansion-panel-content__wrap{
+        padding:0!important;
+        color: var(--v-primary-darken2);
+    }
+  @media all and (-ms-high-contrast:none) {
+    .v-application--is-ltr .v-expansion-panel-header__icon {
+        top: 15px;
+      }
+  }
+// end expansion panel
+
+.v-dialog {
+    overflow-x: hidden;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+.v-input__prepend-outer {
+    margin: 0px !important;
+    
+    .mdi-close::before {
+        font-size: 15px;
+    }
+}

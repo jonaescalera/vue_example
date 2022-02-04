@@ -1,0 +1,1 @@
+export const AF3_HIDDEN_PATHS = ['/install', '/events/reports', '/events/workflows', '/system/settings'];
